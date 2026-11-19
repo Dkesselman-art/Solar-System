@@ -1,0 +1,18 @@
+/* Keyboard Navigation.css - styles for people using the keyboard */
+
+/* Blue ring around the link or button selected with the Tab key */
+:focus-visible,
+.accordion:focus-visible {
+	outline: 3px solid #1e90ff;
+	outline-offset: 3px;
+}
+
+/* The hamburger menu hides anything outside of it, so draw the ring on the inside */
+.topnav a:focus-visible {
+	outline-offset: -3px;
+}
+
+/* Show the drop-down menu when the Tab key is on its button or one of its links */
+.btnholder:focus-within .dropdown {
+	display: block;
+}

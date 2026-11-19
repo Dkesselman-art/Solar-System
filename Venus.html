@@ -1,0 +1,697 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Venus</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+		body{
+			margin: 0px 0px 0px 0px;
+		}
+		/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: greenyellow;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid greenyellow;
+			background: tan;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: greenyellow;
+			color: tan;
+			border: 2px solid tan;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: greenyellow;
+			margin-top: 20px;
+			position: relative;
+		}
+		/* Small screens: Turn Off Navigation Menu Bar when shrinking the Website */
+		@media screen and (max-width: 900px){
+			.logOff{
+				position: static;
+				transform: none;
+				display: block;
+				width: fit-content;
+				margin: 10px auto 0;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+		/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		.navButton{
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: greenyellow;
+			background-color: tan;
+			border: 2px solid Tan;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus {
+			background-color: greenyellow;
+			color: green;
+			text-decoration: none;
+			border: 2px solid tan;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: greenyellow;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: tan;
+			border: 2px solid tan;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: greenyellow;
+			color: green;
+			text-decoration: none;
+			border: 2px solid greenyellow;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: green;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: greenyellow;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder {
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: tan;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2{
+			color: greenyellow;
+		}
+		#textHolder{
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width: auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: greenyellow;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: tan;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: greenyellow;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+<body>
+	<header>Venus Facts</header>
+			<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+		<main>
+		<div id="pictureHolder"><img class="picture" src="Images/venus_rotating.gif" width="173px" height="173px" alt="Venus"/></div>
+		<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#namesake">Namesake</a>
+				<a href="#potential-for-life">Potential for life</a>
+				<a href="#size-and-distance">Size and distance</a>
+				<a href="#orbit-and-rotation">Orbit and rotation</a>
+				<a href="#moons">Moons</a>
+				<a href="#rings">Rings</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+			</aside>
+			<div id="textHolder">
+  <p>Venus is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the third brightest object in the sky after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.</p>
+  <p>Venus is similar in structure and size to Earth, and is sometimes called Earth's evil twin. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead — about 872 degrees Fahrenheit (467 Celsius). And the atmospheric pressure at the surface is about 93 times what it is at sea level on Earth. Below Venus' dense, persistent clouds, the surface has volcanoes and deformed mountains.</p>
+	 <h2 id="namesake">Namesake</h2>
+  <p>The ancient Romans could easily see seven bright objects in the sky: the Sun, the
+    Moon, and the five brightest planets — Mercury, Venus, Mars, Jupiter, and Saturn.
+    They named the objects after their most important gods.</p>
+  <p>Venus is named for the ancient Roman goddess of love and beauty, known as Aphrodite
+    to the ancient Greeks. Most features on Venus are named for women. It is the only
+    planet named after a female god.</p>
+ 
+  <h2 id="potential-for-life">Potential for life</h2>
+  <p>Thirty miles up (about 50 kilometers) from the surface of Venus, temperatures range
+    from 86 to 158 degrees Fahrenheit (30 to 70 Celsius). This range could accommodate
+    Earthly life, such as extremophile microbes, and atmospheric pressure at that height
+    is similar to what we find at Earth's surface.</p>
+  <p>At the tops of Venus' clouds, whipped around the planet by winds measured as high as
+    224 mph (360 kph), we find another transformation. Persistent, dark streaks appear.
+    Scientists are so far unable to explain why these streaks remain stubbornly intact
+    even amid hurricane-force winds. They also have the odd habit of absorbing
+    ultraviolet radiation.</p>
+  <p>The most likely explanations focus on fine particles, ice crystals, or even a
+    chemical compound called iron chloride. Although it is much less likely, another
+    possibility considered by scientists who study astrobiology is that these streaks
+    could be made up of microbial life, Venus-style. Astrobiologists note that ring-shaped
+    linkages of sulfur atoms, known to exist in Venus' atmosphere, could provide microbes
+    with a kind of coating that would protect them from sulfuric acid. These chemical
+    cloaks would also absorb potentially damaging ultraviolet light and re-radiate it as
+    visible light.</p>
+  <p>Some of the Russian Venera probes did detect particles in Venus' lower atmosphere
+    about a micron in length — roughly the same size as a bacterium on Earth.</p>
+  <p>None of these findings provide compelling evidence for the existence of life in
+    Venus' clouds. But the questions they raise, along with Venus' vanished ocean, its
+    violently volcanic surface, and its hellish history, make a compelling case for
+    missions to investigate our temperamental sister planet.</p>
+ 
+  <h2 id="size-and-distance">Size and distance</h2>
+  <p>Venus orbits the Sun from an average distance of 67 million miles
+    (108 million kilometers), or 0.72 astronomical units. Sunlight takes about six minutes
+    to travel from the Sun to Venus, compared to about eight minutes for the Sun and
+    Earth.</p>
+  <p>The planet is nearly as big around as Earth. Its diameter at the equator is about
+    7,521 miles (12,104 kilometers), versus 7,926 miles (12,756 kilometers) for Earth.
+    From Earth, Venus is the brightest object in the night sky after our own Moon. The
+    ancients gave it great importance in their cultures, even thinking it was two
+    objects: a morning star and an evening star.</p>
+  <p>Because Venus' orbit is closer to the Sun than ours, the two planets never stray far
+    from each other from our viewpoint. The ancient Egyptians and Greeks saw Venus in two
+    guises: first in one orbital position, seen in the morning, then another in the
+    evening, just at different times of the year.</p>
+  <p>At its nearest to Earth, Venus is about 24 million miles away
+    (about 38 million kilometers). But most of the time the two planets are farther apart.
+    The maximum distance between Venus and Earth is about 162 million miles
+    (261 million kilometers). Mercury, the innermost planet, actually spends more time in
+    Earth's proximity than Venus does.</p>
+  <p>Through binoculars or a telescope, watched over many months, Venus shows phases just
+    like our Moon — full, half, quarter, and so on. The complete cycle from new to full
+    takes 584 days, while our Moon takes just a month. The phases of Venus, first observed
+    by Galileo through his telescope, provided the key scientific proof for the Copernican
+    heliocentric model of the solar system.</p>
+ 
+  <h2 id="orbit-and-rotation">Orbit and rotation</h2>
+  <p>Spending a day on Venus would be a disorienting experience, assuming your spacecraft
+    or spacesuit could protect you from the extreme heat and crushing air pressure. Your
+    day would be 243 Earth days long — longer even than a Venus year, one trip around the
+    Sun, which takes only 225 Earth days. Because of the planet's extremely slow rotation,
+    sunrise to sunset would take 117 Earth days. And the Sun would rise in the west and
+    set in the east, because Venus spins backward compared to Earth.</p>
+  <p>There is no seasonal relief from the unrelenting temperatures. On Earth, with its
+    spin axis tilted by about 23 degrees, we experience summer when our hemisphere
+    receives the Sun's rays more directly. Venus' very slight tilt is only three degrees,
+    too little to produce noticeable seasons.</p>
+ 
+  <h2 id="moons">Moons</h2>
+  <p>Venus is one of only two planets in our solar system without a moon, but it does have
+    a quasi-satellite officially named Zoozve. This object was discovered on
+    Nov. 11, 2002, by Brian Skiff at the Lowell Observatory Near-Earth-Object Search in
+    Flagstaff, Arizona, a NASA-funded project that ended in February 2008.</p>
+  <p>Quasi-satellites, sometimes called quasi-moons, are asteroids that orbit the Sun
+    while staying close to a planet. A quasi-satellite's orbit is usually more oblong and
+    less stable than the planet's orbit. In time, the shape of that orbit may change and
+    the object may move away from the planet.</p>
+  <p>According to the International Astronomical Union, the organization that names space
+    objects, Zoozve is the first-identified quasi-satellite of a major planet. Earth also
+    has quasi-satellites, including a small asteroid discovered in 2016.</p>
+  <p>Based on its brightness, scientists at NASA's Jet Propulsion Laboratory estimate
+    Zoozve ranges in size from 660 feet (200 meters) to 1,640 feet (500 meters) across.</p>
+  <p>Zoozve also orbits relatively close to Earth but poses no threat to our planet. For
+    the next 175 years, the closest it will get is in 2149, when it will be about
+    2.2 million miles (3.5 million kilometers) away — about nine times the distance from
+    Earth to the Moon.</p>
+ 
+  <h4>How Zoozve got its name</h4>
+  <p>After the discovery in 2002, Skiff reported his finding to the Minor Planet Center,
+    which is funded by a Near-Earth Object Observations Program grant from NASA's
+    Planetary Defense Coordination Office. At the time it was given the provisional name
+    2002 VE68. Skiff said he did not realize the asteroid's importance and forgot about
+    the object until a radio show host reached out to him in 2023 about naming it
+    Zoozve.</p>
+  <p>Soon after the discovery, a team of astronomers including Seppo Mikkola with the
+    University of Turku in Finland and Paul Wiegert with the University of Western Ontario
+    in London determined that the object was the first of its kind found. They think
+    Zoozve may have been a companion to Venus for at least 7,000 years, and that Earth's
+    gravity helped push it into its present orbit.</p>
+  <p>The name comes from a child's poster of the solar system. The artist, Alex Foster,
+    saw 2002 VE68 on a list of solar system objects, wrote down "2002 VE," and then
+    misread his own handwriting as "Zoozve."</p>
+  <p>Latif Nasser, co-host of the WNYC Studios show Radiolab, tracked down the source of
+    the mistake with the help of Liz Landau, a NASA senior communications specialist.
+    Nasser suggested that Skiff request the IAU officially name the asteroid Zoozve. Skiff
+    agreed, and the name was approved in February 2024.</p>
+ 
+  <h2 id="rings">Rings</h2>
+  <p>Venus has no rings.</p>
+ 
+  <h2 id="formation">Formation</h2>
+  <p>How do habitable planets get their start? The close similarities of early Venus and
+    Earth, and their very different fates, provide a kind of test case for scientists who
+    study planet formation. Similar size, similar interior structure, both harboring
+    oceans in their younger days. Yet one is now an inferno, while the other is the only
+    known world to host abundant life. The factors that set these planets on almost
+    opposite paths began, most likely, in the swirling disk of gas and dust from which
+    they were born. Somehow, 4.6 billion years ago, that disk around our Sun accreted,
+    cooled, and settled into the planets we know today. Better knowledge of the formation
+    history of Venus could help us better understand Earth, and rocky planets around
+    other stars.</p>
+ 
+  <h2 id="structure">Structure</h2>
+  <p>If we could slice Venus and Earth in half, pole to pole, and place them side by side,
+    they would look remarkably similar. Each planet has an iron core enveloped by a
+    hot-rock mantle, and the thinnest of skins forms a rocky exterior crust. On both
+    planets this thin skin changes form and sometimes erupts into volcanoes in response to
+    the ebb and flow of heat and pressure deep beneath.</p>
+  <p>On Earth, the slow movement of continents over thousands and millions of years
+    reshapes the surface, a process known as plate tectonics. Something similar might have
+    happened on Venus early in its history. Today a key element of this process could be
+    operating: subduction, the sliding of one continental plate beneath another, which can
+    also trigger volcanoes. Subduction is believed to be the first step in creating plate
+    tectonics.</p>
+  <p>NASA's Magellan spacecraft, which ended a five-year mission to Venus in 1994, mapped
+    the broiling surface using radar. Magellan saw a land of extreme volcanism — a
+    relatively young surface, recently reshaped in geologic terms, and chains of towering
+    mountains.</p>
+ 
+  <h2 id="surface">Surface</h2>
+  <p>Venus is the hottest planet in our solar system, with surface temperatures about
+    872 degrees Fahrenheit (467 Celsius). Atmospheric pressure at the surface squeezes
+    with the same force as being more than 3,000 feet (930 meters) underwater on Earth.
+    The Soviet Union sent a series of probes to Venus between 1961 and 1984 as part of its
+    Venera program. Ten probes made it to the surface, and a few functioned briefly after
+    landing. The longest survivor lasted two hours; the shortest, 23 minutes. Photos they
+    snapped before the landers cooked show a barren, dim, rocky landscape and a sky that
+    is likely some shade of sulfur yellow.</p>
+  <p>Volcanoes and tectonic forces appear to have erased most traces of the early surface
+    of Venus. Newer computer models indicate the resurfacing may have happened piecemeal
+    over an extended period. The average age of surface features could be as young as
+    150 million years, with some older surfaces mixed in.</p>
+  <p>Venus has valleys and high mountains dotted with thousands of volcanoes. Its surface
+    features, most named for both real and mythical women, include Ishtar Terra, a rocky
+    highland area around the size of Australia near the north pole, and an even larger,
+    South-America-sized region called Aphrodite Terra that stretches across the equator.
+    One mountain reaches 36,000 feet (11 kilometers), higher than Mt. Everest. Except for
+    Earth, Venus has by far the fewest impact craters of any rocky planet.</p>
+ 
+  <p>Other notable features of the Venus landscape include:</p>
+  <ul class="planet__features">
+    <li>A volcanic crater named Sacajawea, for Lewis and Clark's Native American guide.</li>
+    <li>A deep canyon called Diana, for the Roman goddess of the hunt.</li>
+    <li>Pancake domes with flat tops and steep sides, as wide as 38 miles
+      (62 kilometers), likely formed by the extrusion of highly viscous lava.</li>
+    <li>Tick domes, odd volcanoes with radiating spurs that, from above, make them look
+      like their blood-feeding namesake.</li>
+    <li>Tesserae, terrain with intricate patterns of ridges and grooves that suggest the
+      scorching temperatures make rock behave more like peanut butter beneath a thin,
+      strong chocolate layer.</li>
+  </ul>
+ 
+  <h2 id="atmosphere">Atmosphere</h2>
+  <p>Venus' atmosphere is one of extremes. With the hottest surface in the solar system
+    apart from the Sun itself, Venus is hotter even than the innermost planet, charbroiled
+    Mercury. The atmosphere is mostly carbon dioxide — the same gas that drives the
+    greenhouse effect on both Venus and Earth — with dense clouds composed of sulfuric
+    acid. Atmospheric pressure at the surface measures a crushing 93 times what it is at
+    sea level on Earth. At the surface, the hot, high-pressure carbon dioxide behaves in a
+    corrosive fashion, but higher up temperatures and pressure begin to ease.</p>
+ 
+  <h2 id="magnetosphere">Magnetosphere</h2>
+  <p>Even though Venus is similar in size to Earth and has a similar-sized iron core, the
+    planet does not have its own internally generated magnetic field. Instead, Venus has
+    an induced magnetic field, created by the interaction of the Sun's magnetic field and
+    the planet's outer atmosphere. Ultraviolet light from the Sun excites gases in Venus'
+    outermost atmosphere; these electrically excited gases are called ions, and so this
+    region is called the ionosphere, which Earth has as well. The solar wind, a
+    million-mile-per-hour gale of electrically charged particles streaming continuously
+    from the Sun, carries the Sun's magnetic field with it. When that field interacts with
+    the electrically excited ionosphere of Venus, it induces a magnetic field there. This
+    induced field envelops the planet and is shaped like an extended teardrop, or the tail
+    of a comet, as the solar wind blows past Venus and outward into the solar system.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>

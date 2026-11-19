@@ -1,0 +1,604 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Europa</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+			body{
+			margin: 0px 0px 0px 0px;
+		}
+		/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: navajowhite;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid navajowhite;
+			background: grey;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: navajowhite;
+			color: grey;
+			border: 2px solid grey;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: navajowhite;
+			margin-top: 20px;
+			position: relative;
+		}
+		/* Small screens: Turn Off Navigation Menu Bar when shrinking the Website */
+		@media screen and (max-width: 900px){
+			.logOff{
+				position: static;
+				transform: none;
+				display: block;
+				width: fit-content;
+				margin: 10px auto 0;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+			/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		.navButton{
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: navajowhite;
+			background-color: grey;
+			border: 2px solid navajowhite;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus{
+			background-color: navajowhite;
+			color: grey;
+			text-decoration: none;
+			border: 2px solid grey;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: navajowhite;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: grey;
+			border: 2px solid navajowhite;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: navajowhite;
+			color: grey;
+			text-decoration: none;
+			border: 2px solid grey;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: grey;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: navajowhite;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder{
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: grey;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2{
+			color: navajowhite;
+		}
+		#textHolder{
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width:auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: navajowhite;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: grey;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: navajowhite;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+	<header>Europa Facts</header>
+			<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+  		<main>
+	  		<div id="pictureHolder"><img class="picture" src="Images/europa.gif" width="173px" height="173px" alt="Europa"/></div>
+	  		<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#namesake">Namesake</a>
+				<a href="#potential-for-life">Potential for Life</a>
+				<a href="#size-and-distance">Size and Distance</a>
+				<a href="#orbit-and-rotation">Orbit and Rotation</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+			</aside>
+			<div id="textHolder">
+<p>Decades ago, science fiction offered a hypothetical scenario: What if alien life were thriving in an ocean beneath the icy surface of Jupiter's moon Europa? The notion pulled Europa out of obscurity and into the limelight where it has remained, stoking the imaginations of people both within and outside the science community who fantasize about humans discovering life beyond Earth. That fantasy, however, may be grounded in reality.</p>
+
+<p>In 1972, scientists using a telescope at Kitt Peak National Observatory in Tucson, Arizona, made spectroscopic observations that showed that Europa's surface composition is mostly water ice. Thermal models dating back to 1971 also suggested that the interior of Europa could contain a layer of liquid water.</p>
+
+<p>NASA's Pioneer 10 and 11 spacecraft flew by Jupiter in the early 1970s, but the first spacecraft to image the surfaces of Jupiter's moons in significant detail were the Voyager 1 and 2 spacecraft.</p>
+
+<p>Voyager 1's closest approach to Jupiter occurred on March 4, 1979. The spacecraft snapped a full global image of Europa from a distance of about 1.2 million miles (2 million kilometers).</p>
+
+<p>A yellowish-looking Europa against the blackness of space.</p>
+
+<p>Voyager 1 took this image of Europa from a range of 1.6 million miles (2,869,252 kilometers).</p>
+
+<p>NASA/JPL-Caltech</p>
+
+<p>A few months later, Voyager 2 had its closest encounter with Europa on July 9, 1979. Images from the two Voyagers revealed a surface brighter than that of Earth's moon, crisscrossed with numerous bands and ridges, and with a surprising lack of large impact craters, tall cliffs, or mountains. In other words, Europa has a very smooth surface, relative to the other icy moons.</p>
+
+<p>Europa_close_up_from_Voyager_2</p>
+
+<p>This color image of Europa was taken by Voyager 2 during its close encounter on July 9, 1979.</p>
+
+<p>NASA/JPL-Caltech</p>
+
+<p>Even though the Voyagers did not pass extremely close to Europa, their images were of high enough quality that researchers noted some of the dark bands had opposite sides that matched each other extremely well, like pieces of a jigsaw puzzle. These cracks had separated, and dark, icy material appeared to have flowed into the opened gaps, suggesting that the surface had been active at some time in the past.</p>
+
+<p>Voyager images showed only a handful of impact craters, which are expected to build up over time as a planetary surface is constantly bombarded by meteorites over billions of years until the surface is covered in craters. Thus, a lack of large impact craters suggested that the moon's surface was relatively young and implied that something had erased them - such as icy, volcanic flows, or settling of the icy crust under its own weight.</p>
+
+<p>These intriguing findings led to a strong sense of anticipation for NASA's Galileo mission, which launched in 1989 and entered orbit around Jupiter in 1995.</p>
+
+<p>Galileo's primary mission included observations of each of the four Galilean moons during repeated flybys. The information about Europa that Galileo sent was so intriguing that the mission was extended for a two-year follow-on journey, known as the Galileo Europa mission. In all, the spacecraft made a total of 12 close flybys of the icy moon.</p>
+
+<p>Europa_from_Galileo</p>
+
+<p>The puzzling, fascinating surface of Jupiter's icy moon Europa looms large in this view made from images taken by NASA's Galileo spacecraft in the late 1990s.</p>
+
+<p>NASA/JPL-Caltech</p>
+
+<p>One of the most important discoveries made by Galileo showed how Jupiter's magnetic field was disrupted in the space around Europa. This measurement strongly implied that a special type of magnetic field is being created (induced) within Europa by a deep layer of some electrically conductive fluid beneath the surface. Based on Europa's icy composition, scientists think the most likely material to create this magnetic signature is a global ocean of salty water.</p>
+
+<p>Scientists think Europa's ice shell is 10 to 15 miles (15 to 25 kilometers) thick, floating on an ocean 40 to 100 miles (60 to 150 kilometers) deep. So while Europa is only one-fourth the diameter of Earth, its ocean may contain twice as much water as Earth's global ocean. Europa's ocean is considered one of the most promising places in the solar system to look for life beyond Earth.</p>
+
+<p>While no plumes were observed while the Galileo spacecraft was in the Jupiter system in the 1990s, more recent observations from telescopes such as the Hubble Space Telescope, as well as a reanalysis of some data from the Galileo spacecraft, have suggested that it is possible that thin plumes of water are being ejected 100 miles (160 kilometers) above Europa's surface. In November 2019, an international research team led by NASA announced it had directly detected water vapor for the first time above Europa's surface. The team measured the vapor using a spectrograph at the Keck Observatory in Hawaii that measures the chemical composition of planetary atmospheres through the infrared light they emit or absorb.</p>
+
+<p>If the plumes do exist, and if their source is linked to Europa's ocean, then a spacecraft could travel through the plume to sample and analyze it from orbit, and it would essentially be analyzing the moon's ocean. NASA's Cassini spacecraft performed this feat at Saturn's moon Enceladus, which is known to have an ocean spraying into space.</p>
+
+<p>Even if Europa isn't ejecting samples into space, a 2018 study concluded that samples of Europa's ocean could get frozen into the base of the moon's ice shell, where the ice makes contact with the ocean. As the ice shell distorts and flexes from tidal forces, warmer and less-dense ice would rise, carrying the ocean samples to the surface where a spacecraft could analyze it remotely, using infrared and ultraviolet instruments, among others. Scientists could then study the material's composition to determine whether Europa's ocean might be hospitable for some form of life.</p>
+
+<h2 id="namesake">Namesake</h2>
+<p>Europa is named for a woman who, in Greek mythology, was abducted by the god Zeus – Jupiter in Roman mythology.</p>
+
+<h2 id="potential-for-life">Potential for Life</h2>
+<p>Life as we know it seems to have three main requirements: liquid water, certain chemical elements, and an energy source. Also, life takes time to develop. Europa's ocean may have existed for the entirety of our solar system's history, approximately 4 billion years so sufficient time has passed for life to develop.</p>
+
+<p>Astrobiologists – scientists who study the origin, evolution, and future of life in the universe – believe Europa has abundant water and the right chemical elements – the building blocks of life – including carbon, hydrogen, nitrogen, oxygen, phosphorus, and sulfur.</p>
+
+<p>The third ingredient for life is energy. All lifeforms need energy to survive. On Earth, most of that energy comes from the Sun. For example, plants grow and thrive through photosynthesis, a process that converts sunlight into energy. The energy is transferred to humans, animals, and other organisms when the plants are eaten.</p>
+
+<p>But the type of life that might inhabit Europa likely would be powered purely by chemical reactions instead of by photosynthesis, because any life at Europa would exist beneath the ice, where there is no sunlight.</p>
+
+<p>Europa's surface is blasted by radiation from Jupiter. That's a bad thing for life on the surface – it couldn't survive. But the radiation may create fuel for life in an ocean below the surface.</p>
+
+<p>If we eventually find some form of life at Europa it may look like microbes, or maybe something more complex. If it can be demonstrated that life formed independently in two places around the same star, it would then be reasonable to suggest that life springs up in the universe fairly easily once the necessary ingredients are present, and that life might be found throughout our galaxy and the universe.</p>
+
+<h2 id="size-and-distance">Size and Distance</h2>
+<p>With an equatorial diameter of 1,940 miles (3,100 kilometers), Europa is about 90% the size of Earth's Moon. So if we replaced our Moon with Europa, it would appear roughly the same size in the sky as our Moon does, but brighter – much, much brighter. Europa's surface is made of water ice and so it reflects 5.5 times the sunlight than our Moon does.</p>
+
+<p>Europa orbits Jupiter at about 417,000 miles (671,000 kilometers) from the planet, which itself orbits the Sun at a distance of roughly 500 million miles (780 million kilometers), or 5.2 astronomical units (AU). One AU is the distance from Earth to the Sun. Light from the Sun takes about 45 minutes to reach Europa. Because of the distance, sunlight is about 25 times fainter at Jupiter and Europa than at Earth.</p>
+
+<h2 id="orbit-and-rotation">Orbit and Rotation</h2>
+<p>Europa orbits Jupiter every 3.5 days and is locked by gravity to Jupiter, so the same hemisphere of the moon always faces the planet. Jupiter takes about 4,333 Earth days (or about 12 Earth years) to orbit the Sun (a Jovian year). Jupiter's equator (and the orbital plane of its moons) is tilted with respect to Jupiter's orbital path around the Sun by only 3 degrees (Earth is tilted 23.5 degrees). This means Jupiter spins nearly upright so that the planet, as well as Europa and Jupiter's other moons, do not have seasons like Earth.</p>
+
+<p>Jupiter's moons Io, Europa, and Ganymede are in what is called a resonance – every time Ganymede orbits Jupiter once, Europa orbits twice, and Io orbits four times. Over time, the orbits of most large satellites or planets tend to become circular, but in the case of these three satellites, the resonance produces a forced eccentricity since the satellites line up with each other at the same points in their orbits over and over, giving each other a small gravitational tug that keeps their orbits from becoming circular.</p>
+
+<p>Because Europa's orbit is elliptical (slightly stretched out from circular), its distance from Jupiter varies, and the moon's near side feels Jupiter's gravity more strongly than its far side. The magnitude of this difference changes as Europa orbits, creating tides that stretch and relax the moon's surface.</p>
+
+<p>Flexing from the tides likely creates the moon's surface fractures. If Europa's ocean exists, the tidal heating could also lead to volcanic or hydrothermal activity on the seafloor, supplying nutrients that could make the ocean suitable for living things.</p>
+
+<h2 id="formation">Formation</h2>
+<p>Jupiter's large Galilean moons – Io, Europa, Ganymede, and Callisto – likely formed out of leftover material after Jupiter condensed from the initial cloud of gas and dust surrounding the sun, early in the history of the solar system. Those four moons are likely about the same age as the rest of the solar system – about 4.5 billion years old.</p>
+
+<p>In fact, the Galilean moons are sometimes called a "mini solar system" since they formed from the leftovers of Jupiter similar to how Earth and other planets formed from gas and dust left over from the formation of the Sun. The similarities don't end there. Each planet in the inner solar system is less dense than its inner neighbor – Mars is less dense than Earth, which is less dense than Venus, which is less dense than Mercury. The Galilean moons follow the same principle, being less dense the farther they are from Jupiter. The reduced density at greater distances is likely due to temperature: denser, rocky, and metal material condenses out first, close to Jupiter or the Sun, while lighter-weight icy material only condenses out at larger distances where it is colder.</p>
+
+<p>Distance from Jupiter also determines how much tidal heating the Galilean satellites experience – Io, closest to Jupiter, is heated so much that it is the most volcanically-active body in the solar system. Ancient volcanic activity likely long ago evaporated any water it had when it formed. Europa has a layer of ice and water on top of a rocky and metal interior, while Ganymede and Callisto actually have higher proportions of water ice and lower densities.</p>
+
+<h2 id="structure">Structure</h2>
+<p>Like our planet, Europa is thought to have an iron core, a rocky mantle, and an ocean of salty water. Unlike Earth, however, Europa's ocean lies below a shell of ice probably 10 to 15 miles (15 to 25 kilometers) thick, and has an estimated depth of 40 to 100 miles (60 to 150 kilometers). While evidence for an internal ocean is strong, its presence awaits confirmation by a future mission.</p>
+
+<h2 id="surface">Surface</h2>
+<p>Europa's water-ice surface is crisscrossed by dark, reddish-brown cracks. Based on the small number of observable craters, the surface of this moon appears to be no more than 40 to 90 million years old, which is youthful in geologic terms (the surface of Callisto, another of Jupiter's moons, is estimated to be a few billion years old). All along Europa's many fractures, and in splotchy patterns across its surface, is a reddish-brown material whose composition is not known for certain, but likely contains salts and sulfur compounds that have been mixed with the water ice and modified by radiation. This surface composition may hold clues to the moon's potential as a habitable world.</p>
+
+<p>Close up image of Europa's surface</p>
+
+<p>The image on the left shows a region of Europa's crust made up of blocks which are thought to have broken apart and "rafted" into new positions. These images were obtained by NASA's Galileo spacecraft in 1996 and 1997 at a distance of 417,489 miles (677,000 kilometers).</p>
+
+<p>NASA/JPL/University of Arizona</p>
+
+<p>NASA's Galileo spacecraft explored the Jupiter system from 1995 to 2003 and made numerous flybys of Europa. Galileo revealed strange pits and domes that suggest Europa's ice layer could be slowly churning, or convecting (cooler, denser ice sinks, while warmer less-dense ice rises) due to heat from below. Long, linear fractures are often only about a half mile to a mile wide (1-2 kilometers wide) but can extend for thousands of kilometers across Europa's surface. Some of these fractures have built up into ridges hundreds of meters tall, while others appear to have pulled apart into wide bands of multiple parallel fractures.</p>
+
+<p>Galileo also found regions called "chaos terrain," where broken, blocky landscapes were covered in mysterious reddish material. In 2011, scientists studying Galileo data proposed that chaos terrains could be places where the surface collapsed above lens-shaped lakes embedded within the ice.</p>
+
+<h2 id="atmosphere">Atmosphere</h2>
+<p>Europa has only a tenuous atmosphere of oxygen, but in 2013, NASA announced that researchers using the Hubble Space Telescope found evidence that Europa might be actively venting water into space. This would mean the moon is geologically active in the present day.</p>
+
+<p>In November 2019, an international research team led by NASA announced it had directly detected water vapor for the first time above Europa's surface. If the plumes do exist, and if their source is linked to Europa's ocean, then a spacecraft could travel through the plume to sample and analyze it from orbit, and it would essentially be analyzing the moon's ocean. NASA's Cassini spacecraft performed this feat at Saturn's moon Enceladus, which is known to have an ocean spraying into space.</p>
+
+<h2 id="magnetosphere">Magnetosphere</h2>
+<p>One of the most important measurements made by the Galileo mission showed how Jupiter's magnetic field was disrupted in the space around Europa. The measurement strongly implied that a special type of magnetic field is being created (induced) within Europa by a deep layer of some electrically conductive fluid beneath the surface. Based on Europa's icy composition, scientists think the most likely material to create this magnetic signature is a global ocean of salty water, and this magnetic field result is still the best evidence we have for the existence of an ocean on Europa.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>

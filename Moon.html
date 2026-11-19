@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Moon</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+	body{
+			margin: 0px 0px 0px 0px;
+		}
+		/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: white;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid white;
+			background: grey;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: white;
+			color: grey;
+			border: 2px solid grey;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: white;
+			margin-top: 20px;
+			position: relative;
+		}
+		/* Small screens: Turn Off Navigation Menu Bar when shrinking the Website */
+		@media screen and (max-width: 900px){
+			.logOff{
+				position: static;
+				transform: none;
+				display: block;
+				width: fit-content;
+				margin: 10px auto 0;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+		/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		.navButton{
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: white;
+			background-color: grey;
+			border: 2px solid white;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus{
+			background-color: white;
+			color: grey;
+			text-decoration: none;
+			border: 2px solid grey;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: white;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: grey;
+			border: 2px solid white;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: white;
+			color: grey;
+			text-decoration: none;
+			border: 2px solid grey;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: grey;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: white;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder{
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: grey;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2{
+			color: white;
+		}
+		#textHolder{
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width:auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: white;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: grey;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: white;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+	<header>Moon Facts</header>
+			<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+  		<main>
+	  		<div id="pictureHolder"><img class="picture" src="Images/moon.gif" width= 173px" height="173x" alt="Moon"/></div>
+	  		<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#how-the-moon-got-its-name">How the Moon Got Its Name</a>
+				<a href="#potential-for-life">Potential for Life</a>
+				<a href="#size-and-distance">Size and Distance</a>
+				<a href="#orbit-and-rotation">Orbit and Rotation</a>
+				<a href="#rings">Rings</a>
+				<a href="#moons">Moons</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#water-on-the-moon">Water on the Moon</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+			</aside>
+			<div id="textHolder">
+  <h2 id="how-the-moon-got-its-name">How the Moon Got Its Name</h2>
+<p>Our Moon shares a name with all moons simply because people didn't know other moons existed until Galileo Galilei discovered four moons orbiting Jupiter in 1610. In Latin, the Moon was called Luna, which is the main adjective for all things Moon-related: lunar.</p>
+
+<h2 id="potential-for-life">Potential for Life</h2>
+<p>The many missions that have explored the Moon have found no evidence to suggest it has its own living things. However, the Moon could be the site of future colonization by humans. The discovery that the Moon harbors water ice, and that the highest concentrations occur within darkened craters at the poles, makes the Moon a little more hospitable for future human colonists.</p>
+
+<h2 id="size-and-distance">Size and Distance</h2>
+<p>With a radius of about 1,080 miles (1,740 kilometers), the Moon is less than a third of the width of Earth. If Earth were the size of a nickel, the Moon would be about as big as a coffee bean.</p>
+
+<p>The Moon is an average of 238,855 miles (384,400 kilometers) away. That means 30 Earth-sized planets could fit in between Earth and the Moon.</p>
+
+<p>The Moon is slowly moving away from Earth, getting about an inch farther away each year.</p>
+
+<p>Illustration showing the distance from the Earth to the Moon.</p>
+
+<p>NASA/Moore Boeck</p>
+
+<h2 id="orbit-and-rotation">Orbit and Rotation</h2>
+<p>The Moon is rotating at the same rate that it revolves around Earth (called synchronous rotation), so the same hemisphere faces Earth all the time. Some people call the far side – the hemisphere we never see from Earth – the "dark side", but that's misleading.</p>
+
+<p>As the Moon orbits Earth, different parts are in sunlight or darkness at different times. The changing illumination is why, from our perspective, the Moon goes through phases. During a "full moon," the hemisphere of the Moon we can see from Earth is fully illuminated by the Sun. And a "new moon" occurs when the far side of the Moon has full sunlight, and the side facing us is having its night.</p>
+
+<p>The Moon makes a complete orbit around Earth in 27 Earth days and rotates or spins at that same rate, or in that same amount of time. Because Earth is moving as well – rotating on its axis as it orbits the Sun – from our perspective, the Moon appears to orbit us every 29 days.</p>
+
+<h2 id="rings">Rings</h2>
+<p>The Moon has no rings.</p>
+
+<h2 id="moons">Moons</h2>
+<p>Earth's Moon has no moons of its own.</p>
+
+<h2 id="formation">Formation</h2>
+<p>The Moon likely formed after a Mars-sized body collided with Earth several billion years ago.</p>
+
+<p>The resulting debris from both Earth and the impactor accumulated to form our natural satellite 239,000 miles (384,000 kilometers) away. The newly formed Moon was in a molten state, but within about 100 million years, most of the global "magma ocean" had crystallized, with less-dense rocks floating upward and eventually forming the lunar crust.</p>
+
+<h2 id="structure">Structure</h2>
+<p>Earth's Moon has a core, mantle, and crust.</p>
+
+<p>The Moon's core is proportionally smaller than other terrestrial bodies' cores. The solid, iron-rich inner core is 149 miles (240 kilometers) in radius. It is surrounded by a liquid iron shell 56 miles (90 kilometers) thick. A partially molten layer surrounds the iron core.</p>
+
+<p>The mantle extends from the top of the partially molten layer to the bottom of the Moon's crust. It is most likely made of minerals like olivine and pyroxene, which are made up of magnesium, iron, silicon, and oxygen atoms.</p>
+
+<p>The crust is about 25 miles (40 kilometers) thick on the Moon's near-side hemisphere and up to about 37 miles (60 kilometers) thick on the far-side. It is made of oxygen, silicon, magnesium, iron, calcium, and aluminum, with small amounts of titanium, uranium, thorium, potassium, and hydrogen.</p>
+
+<p>Long ago the Moon had active volcanoes, but today they are all dormant and have not erupted for millions of years.</p>
+
+<h2 id="surface">Surface</h2>
+<p>With too sparse an atmosphere to impede impacts, a steady rain of asteroids, meteoroids, and comets strikes the surface of the Moon, leaving numerous craters behind. Tycho Crater is more than 52 miles (85 kilometers) wide.</p>
+
+<p>Over billions of years, these impacts have ground up the surface of the Moon into fragments ranging from huge boulders to powder. Nearly the entire Moon is covered by a rubble pile of charcoal-gray, powdery dust, and rocky debris called the lunar regolith. Beneath is a region of fractured bedrock referred to as the megaregolith.</p>
+
+<p>The light areas of the Moon are known as the highlands. The dark features, called maria (Latin for seas), are impact basins that were filled with lava between 4.2 and 1.2 billion years ago. These light and dark areas represent rocks of different compositions and ages, which provide evidence for how the early crust may have crystallized from a lunar magma ocean. The craters themselves, which have been preserved for billions of years, provide an impact history for the Moon and other bodies in the inner solar system.</p>
+
+<p>If you looked in the right places on the Moon, you would find pieces of equipment, American flags, and even a camera left behind by astronauts. While you were there, you'd notice that the gravity on the surface of the Moon is one-sixth of Earth's, which is why in footage of moonwalks, astronauts appear to almost bounce across the surface.</p>
+
+<p>The temperature on the Moon reaches about 260 degrees Fahrenheit (127 degrees Celsius) when in full Sun, but in darkness, the temperatures plummet to about -280 degrees Fahrenheit (-173 degrees Celsius).</p>
+
+<h2 id="water-on-the-moon">Water on the Moon</h2>
+<p>During the initial exploration of the Moon, and the analysis of all the returned samples from the Apollo and the Luna missions, we thought that the surface of the Moon was dry.</p>
+
+<p>The first definitive discovery of water was made in 2008 by the Indian mission Chandrayaan-1, which detected hydroxyl molecules spread across the lunar surface and concentrated at the poles. Missions such as Lunar Prospector, LCROSS, and Lunar Reconnaissance Orbiter, have not only shown that the surface of the Moon has global hydration but there are actually high concentrations of ice water in the permanently shadowed regions of the lunar poles.</p>
+
+<p>Scientists have discovered that water is being released from the Moon during meteor showers.</p>
+
+<p>NASA's Goddard Space Flight Center</p>
+
+<p>Scientists also found the lunar surface releases its water when the Moon is bombarded by micrometeoroids. The surface is protected by a layer, a few centimeters of dry soil that can only be breached by large micrometeoroids. When micrometeoroids impact the surface of the Moon, most of the material in the crater is vaporized. The shock wave carries enough energy to release the water that's coating the grains of the soil. Most of that water is released into space.</p>
+
+<p>In October 2020, NASA's Stratospheric Observatory for Infrared Astronomy (SOFIA) confirmed, for the first time, water on the sunlit surface of the Moon. This discovery indicates that water may be distributed across the lunar surface, and not limited to cold, shadowed places. SOFIA detected water molecules (H2O) in Clavius Crater, one of the largest craters visible from Earth, located in the Moon's southern hemisphere.</p>
+
+<p>Discovery Timeline: Water &amp; Ices on the Moon</p>
+
+<h2 id="atmosphere">Atmosphere</h2>
+<p>The Moon has a very thin and weak atmosphere. It does not provide any protection from the Sun's radiation or impacts from meteoroids.</p>
+
+<h2 id="magnetosphere">Magnetosphere</h2>
+<p>The early Moon may have developed an internal dynamo, the mechanism for generating global magnetic fields for terrestrial planets, but today, the Moon has a very weak magnetic field. The magnetic field here on Earth is many thousands of times stronger than the Moon's magnetic field.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>

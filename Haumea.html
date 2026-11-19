@@ -1,0 +1,525 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Haumea</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+		body {
+			margin: 0px 0px 0px 0px;
+		}
+		/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: darkgray;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid darkgray;
+			background: ghostwhite;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: darkgray;
+			color: ghostwhite;
+			border: 2px solid ghostwhite;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: ghostwhite;
+			margin-top: 20px;
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+			/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		.navButton {
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: darkgray;
+			background-color: ghostwhite;
+			border: 2px solid darkgray;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus {
+			background-color: darkgray;
+			color: ghostwhite;
+			text-decoration: none;
+			border: 2px solid darkgray;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: ghostwhite;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: ghostwhite;
+			border: 2px solid darkgray;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: darkgray;
+			color: ghostwhite;
+			text-decoration: none;
+			border: 2px solid ghostwhite;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: ghostwhite;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: darkgray;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder {
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: darkgray;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2{
+			color: ghostwhite;
+		}
+		#textHolder{
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width: auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: ghostwhite;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: darkgray;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: ghostwhite;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+<body>	
+		<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+	<header>Haumea Facts</header>
+				<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<div id="pictureHolder"><img class="picture" src="Images/Haumea_rotating.gif" width="80px" height="80px" alt="Haumea"/></div>
+			<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#namesake">Namesake</a>
+				<a href="#potential-for-life">Potential for Life</a>
+				<a href="#size-and-distance">Size and Distance</a>
+				<a href="#orbit-and-rotation">Orbit and Rotation</a>
+				<a href="#moons">Moons</a>
+				<a href="#rings">Rings</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+			</aside>
+			<div id="textHolder">
+	<p>Haumea is an oval-shaped dwarf planet that is one of the fastest rotating large objects in our solar system. The fast spin distorts Haumea's shape, making this dwarf planet look like a football.</p>
+
+<h2 id="namesake">Namesake</h2>
+<p>Two teams claim credit for discovering Haumea citing evidence from observations made in 2003 and 2004. The International Astronomical Union's Gazetteer of Planetary Nomenclature lists the discovery location as Sierra Nevada Observatory in Spain on March 7, 2003, but no official discoverer is listed. Haumea is named after the Hawaiian goddess of fertility.</p>
+
+<h2 id="potential-for-life">Potential for Life</h2>
+<p>Haumea is extremely cold and doesn't appear to have conditions suitable for life.</p>
+
+<h2 id="size-and-distance">Size and Distance</h2>
+<p>With an equatorial diameter of about 1,080 miles (about 1,740 kilometers), Haumea is about 1/7 the width of Earth. If Earth were the size of a nickel, Haumea would be about as big as a sesame seed. From an average distance of 4 billion miles (6.5 billion kilometers), Haumea is 43 astronomical units away from the Sun. One astronomical unit (abbreviated as AU), is the distance from the Sun to Earth. From this distance, it takes sunlight 6 hours to travel from the Sun to Haumea.</p>
+
+<h2 id="orbit-and-rotation">Orbit and Rotation</h2>
+<p>Haumea takes 285 Earth years to make one trip around the Sun. As Haumea orbits the Sun, it completes one rotation every 4 hours, making it one of the fastest rotating large objects in our solar system.</p>
+
+<p>It is possible that a large object impacted Haumea billions of years ago and set off Haumea's spin and created its moons.</p>
+
+<h2 id="moons">Moons</h2>
+<p>Haumea has two known moons: Namaka is the inner moon, and Hi'iaka is the outer moon. Both were discovered in 2005 and named for the mythological daughters of Haumea. Hi'iaka is the patron goddess of the island of Hawaii and of hula dancers. Namaka is a water spirit in Hawaiian mythology.</p>
+
+<h2 id="rings">Rings</h2>
+<p>Haumea is the first known Kuiper Belt Object to have rings. Scientists announced the discovery in 2017 after watching the dwarf planet pass in front of a star.</p>
+
+<h2 id="formation">Formation</h2>
+<p>Dwarf planet Haumea is a member of a group of objects that orbit in a disc-like zone beyond the orbit of Neptune called the Kuiper Belt. This distant realm is populated with thousands of miniature icy worlds which formed early in the history of our solar system about 4.5 billion years ago. These icy, rocky bodies are called Kuiper Belt objects, transneptunian objects, or plutoids.</p>
+
+<h2 id="structure">Structure</h2>
+<p>Astronomers believe Haumea is made of rock with a coating of ice.</p>
+
+<h2 id="surface">Surface</h2>
+<p>We know very little about Haumea's surface.</p>
+
+<h2 id="atmosphere">Atmosphere</h2>
+<p>We know very little about Haumea's atmosphere.</p>
+
+<h2 id="magnetosphere">Magnetosphere</h2>
+<p>Scientists do not think Haumea has a magnetosphere.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>

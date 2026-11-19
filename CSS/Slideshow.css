@@ -1,0 +1,136 @@
+/* =========================================================
+   Slideshow.css — styles for the planet slideshow
+   Based on the W3Schools "How To - Slideshow" example
+   ========================================================= */
+
+/* Only applied inside the slideshow so it can't shift your nav or footer */
+.slideshow-container,
+.slideshow-container * {
+	box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: 40px auto 0;
+}
+
+/* Hide the images by default */
+.mySlides {
+	display: none;
+}
+
+.mySlides img {
+	display: block;
+	width: 100%;
+	height: 500px;
+	object-fit: contain; /* keeps wide Saturn from being cropped */
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 250px; /* middle of the 500px image */
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Pin the "previous button" to the left edge.
+   Without this, your main { text-align: center; } pulls it to the middle. */
+.prev {
+	left: 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a see-through black background */
+.prev:hover,
+.next:hover {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+}
+
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 22px;
+	padding: 12px 12px 0;
+	width: 100%;
+	text-align: center;
+}
+
+/* Number text (1/8 etc) */
+.numbertext {
+	color: #f2f2f2;
+	font-size: 16px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* The dots/bullets/indicators */
+.dotHolder {
+	text-align: center;
+	margin-top: 16px;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+	background-color: white;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from { opacity: 0.4; }
+	to { opacity: 1; }
+}
+
+/* Smaller screens */
+@media (max-width: 800px) {
+	.mySlides img {
+		height: 300px;
+	}
+	.prev,
+	.next {
+		top: 150px;
+		font-size: 16px;
+		padding: 12px;
+	}
+	.text {
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+/*Star Image Background*/
+body,
+header,
+nav,
+main,
+footer{
+	background-image: url("../Images/starry-background animation.gif");
+	background-color: black;
+}

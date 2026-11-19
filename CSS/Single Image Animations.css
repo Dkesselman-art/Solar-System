@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---Single Image Animation---*/
+
+/* ---- Slide up on page load ---- */
+#pictureHolder {
+	animation: slideUp 1s ease-out both;
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(80px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* ---- Keep floating up and down ---- */
+#pictureHolder img {
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50%      { transform: translateY(-15px); }
+}
+#textHolder {
+	animation: slideUp 1s ease-out both;
+}

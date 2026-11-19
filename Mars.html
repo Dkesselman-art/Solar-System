@@ -1,0 +1,631 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mars</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+		body {
+			margin: 0px 0px 0px 0px;
+		}
+	/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: darkred;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid red;
+			background: orangered;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: darkred;
+			color: orangered;
+			border: 2px solid orangered;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: orangered;
+			margin-top: 20px;
+			position: relative;
+		}
+		/* Small screens: Turn Off Navigation Menu Bar when shrinking the Website */
+		@media screen and (max-width: 900px){
+			.logOff{
+				position: static;
+				transform: none;
+				display: block;
+				width: fit-content;
+				margin: 10px auto 0;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+		/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+		.navButton {
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: darkred;
+			background-color: orangered;
+			border: 2px solid red;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus {
+			background-color: darkred;
+			color: orangered;
+			text-decoration: none;
+			border: 2px solid orangered;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: darkred;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: orangered;
+			border: 2px solid red;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: darkred;
+			color: orangered;
+			text-decoration: none;
+			border: 2px solid orangered;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: orangered;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: darkred;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder {
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: red;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2{
+			color: orangered;
+		}
+		#textHolder{
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width: auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: orangered;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: red;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: orangered;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+	<header>Mars Facts</header>
+			<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+		<main>
+			<div id="pictureHolder"><img class="picture" src="Images/mars_rotating.gif" width="141px" height="141px" alt="Mars"/></div>
+			<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#namesake">Namesake</a>
+				<a href="#potential-for-life">Potential for life</a>
+				<a href="#size-and-distance">Size and distance</a>
+				<a href="#orbit-and-rotation">Orbit and rotation</a>
+				<a href="#moons">Moons</a>
+				<a href="#rings">Rings</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+			</aside>
+			<div id="textHolder">
+	<p>Mars — the fourth planet from the Sun — is a dusty, cold, desert world with a very thin atmosphere. This dynamic planet has seasons, polar ice caps, extinct volcanoes, canyons, and weather.</p>
+	<p>Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape. NASA missions have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago.</p>
+	<h2 id="namesake">Namesake</h2>
+  <p>Mars was named by the ancient Romans for their god of war, because its reddish color
+    was reminiscent of blood. Other civilizations also named the planet for this
+    attribute; the Egyptians, for example, called it Her Desher, meaning "the red one."
+    Even today it is frequently called the Red Planet, because iron minerals in the
+    Martian dirt oxidize, or rust, causing the surface to look red.</p>
+ 
+  <h2 id="potential-for-life">Potential for life</h2>
+  <p>Scientists do not expect to find living things currently thriving on Mars. Instead,
+    they are looking for signs of life that existed long ago, when Mars was warmer and
+    covered with water.</p>
+ 
+  <h2 id="size-and-distance">Size and distance</h2>
+  <p>With a radius of 2,106 miles (3,390 kilometers), Mars is about half the size of
+    Earth. If Earth were the size of a nickel, Mars would be about as big as a
+    raspberry.</p>
+  <p>From an average distance of 142 million miles (228 million kilometers), Mars is
+    1.5 astronomical units away from the Sun. One astronomical unit is the distance from
+    the Sun to Earth. From this distance, it takes sunlight 13 minutes to travel from the
+    Sun to Mars.</p>
+ 
+  <h2 id="orbit-and-rotation">Orbit and rotation</h2>
+  <p>As Mars orbits the Sun, it completes one rotation every 24.6 hours, very similar to
+    one day on Earth at 23.9 hours. Martian days are called sols, short for solar day. A
+    year on Mars lasts 669.6 sols, the same as 687 Earth days.</p>
+  <p>Mars' axis of rotation is tilted 25 degrees with respect to the plane of its orbit
+    around the Sun — another similarity with Earth, which has an axial tilt of
+    23.4 degrees. Like Earth, Mars has distinct seasons, but they last longer than seasons
+    here since Mars takes longer to orbit the Sun. And while on Earth the seasons are
+    evenly spread over the year, each lasting three months, on Mars the seasons vary in
+    length because of the planet's elliptical, egg-shaped orbit.</p>
+  <p>Spring in the northern hemisphere, which is autumn in the southern, is the longest
+    season at 194 sols. Autumn in the north, spring in the south, is the shortest at
+    142 sols. Northern winter and southern summer runs 154 sols, and northern summer with
+    southern winter runs 178 sols.</p>
+ 
+  <h2 id="moons">Moons</h2>
+  <p>Mars has two small moons, Phobos and Deimos, that may be captured
+    asteroids. They are potato-shaped because they have too little mass for gravity to
+    make them spherical.</p>
+  <p>The moons get their names from the horses that pulled the chariot of the Greek god of
+    war, Ares, whose Roman counterpart is Mars. Phobos, the innermost and larger moon, is
+    heavily cratered, with deep grooves on its surface. It is slowly moving toward Mars
+    and will crash into the planet or break apart in about 50 million years.</p>
+  <p>Deimos is about half as big as Phobos and orbits two and a half times farther away
+    from Mars. Oddly shaped Deimos is covered in loose dirt that often fills the craters
+    on its surface, making it appear smoother than pockmarked Phobos.</p>
+ 
+  <h2 id="rings">Rings</h2>
+  <p>Mars has no rings. However, in 50 million years, when Phobos crashes into Mars or
+    breaks apart, it could create a dusty ring around the Red Planet.</p>
+ 
+  <h2 id="formation">Formation</h2>
+  <p>When the solar system settled into its current layout about 4.5 billion years ago,
+    Mars formed as gravity pulled swirling gas and dust in to become the fourth planet
+    from the Sun. Mars is about half the size of Earth, and like its fellow terrestrial
+    planets it has a central core, a rocky mantle, and a solid crust.</p>
+ 
+  <h2 id="structure">Structure</h2>
+  <p>Mars has a dense core at its center, between 930 and 1,300 miles
+    (1,500 to 2,100 kilometers) in radius, made of iron, nickel, and sulfur. Surrounding
+    the core is a rocky mantle between 770 and 1,170 miles (1,240 to 1,880 kilometers)
+    thick, and above that a crust made of iron, magnesium, aluminum, calcium, and
+    potassium. This crust is between 6 and 30 miles (10 to 50 kilometers) deep.</p>
+ 
+  <h2 id="surface">Surface</h2>
+  <p>The Red Planet is actually many colors. At the surface we see colors such as brown,
+    gold, and tan. The reason Mars looks reddish is the oxidization, or rusting, of iron
+    in the rocks, regolith — Martian soil — and dust. This dust gets kicked up into the
+    atmosphere, and from a distance makes the planet appear mostly red.</p>
+  <p>While Mars is about half the diameter of Earth, its surface has nearly the same area
+    as Earth's dry land. Its volcanoes, impact craters, crustal movement, and atmospheric
+    conditions such as dust storms have altered the landscape over many years, creating
+    some of the solar system's most interesting topographical features.</p>
+ 
+  <h4>A very large canyon</h4>
+  <p>A vast canyon system called Valles Marineris is long enough to stretch from
+    California to New York. This Martian canyon, the largest in the solar system, extends
+    about 2,400 miles (3,870 kilometers) in length, spans about 370 miles
+    (600 kilometers) across at its widest, and descends about 5.8 miles
+    (9.3 kilometers) at its deepest, from the rim to the canyon floor. That is more than
+    10 times longer and wider than Earth's Grand Canyon.</p>
+ 
+  <h4>The largest volcano</h4>
+  <p>Mars is home to the largest volcano in the solar system, Olympus Mons. It dwarfs
+    Earth's highest peak, Mount Everest, which rises 29,029 feet (8,848 meters) above the
+    Earth's surface. Olympus Mons stands more than 25 miles tall from base to summit —
+    more than 132,000 feet, or 40 kilometers — with the base covering an area as large as
+    the state of Arizona.</p>
+ 
+  <h4>Water on Mars</h4>
+  <p>Mars appears to have had a watery past, with ancient river valley networks, deltas,
+    and lakebeds, as well as rocks and minerals on the surface that could only have formed
+    in liquid water. Some features suggest that Mars experienced huge floods about
+    3.5 billion years ago.</p>
+  <p>There is water on Mars today, but the Martian atmosphere is too thin for liquid water
+    to exist for long on the surface. Today, water on Mars is found as water ice just under
+    the surface in the polar regions, and as briny, salty water that seasonally flows down
+    some hillsides and crater walls.</p>
+ 
+  <h2 id="atmosphere">Atmosphere</h2>
+  <p>Mars has a thin atmosphere made up mostly of carbon dioxide, nitrogen, and argon
+    gases. To our eyes the sky would be hazy and red because of suspended dust, instead of
+    the familiar blue tint we see on Earth. Mars' sparse atmosphere does not offer much
+    protection from impacts by objects such as meteorites, asteroids, and comets.</p>
+  <p>The temperature on Mars can be as high as 70 degrees Fahrenheit (20 degrees Celsius)
+    or as low as about minus 225 degrees Fahrenheit (minus 153 degrees Celsius). Because
+    the atmosphere is so thin, heat from the Sun easily escapes the planet. If you were to
+    stand on the surface of Mars at the equator at noon, it would feel like spring at your
+    feet, 75 degrees Fahrenheit (24 degrees Celsius), and winter at your head,
+    32 degrees Fahrenheit (0 degrees Celsius).</p>
+  <p>Occasionally, winds on Mars are strong enough to create dust storms that cover much
+    of the planet. After such storms it can be months before all of the dust settles.</p>
+ 
+  <h2 id="magnetosphere">Magnetosphere</h2>
+  <p>Mars has no global magnetic field today, but areas of the Martian crust in the
+    southern hemisphere are highly magnetized, indicating traces of a magnetic field from
+    4 billion years ago.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>

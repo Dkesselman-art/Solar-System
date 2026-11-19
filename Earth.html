@@ -1,0 +1,621 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Earth</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+		body{
+			margin: 0px 0px 0px 0px;
+		}
+	/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: lightgreen;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid green;
+			background: green;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: darkblue;
+			color: darkcyan;
+			border: 2px solid green;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: blue;
+			margin-top: 20px;
+			position: relative;
+		}
+		/* Small screens: Turn Off Navigation Menu Bar when shrinking the Website */
+		@media screen and (max-width: 900px){
+			.logOff{
+				position: static;
+				transform: none;
+				display: block;
+				width: fit-content;
+				margin: 10px auto 0;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+		/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		.navButton {
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: lightgreen;
+			background-color: darkgreen;
+			border: 2px solid darkgreen;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus {
+			background-color: darkblue;
+			color: darkcyan;
+			text-decoration: none;
+			border: 2px solid green;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: darkcyan;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: darkgreen;
+			border: 2px solid darkgreen;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: darkblue;
+			color: darkcyan;
+			text-decoration: none;
+			border: 2px solid darkgreen;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: darkcyan;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: lightgreen;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder {
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: green;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2 {
+			color: blue;
+		}
+		#textHolder {
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width:auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: blue;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: green;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: blue;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+	<header>Earth Facts</header>
+				<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+		<main>
+		<div id="pictureHolder"><img class="picture" src="Images/earth_rotating.gif" width="177px" height="177px" alt="Earth"/></div>
+		<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#namesake">Namesake</a>
+				<a href="#potential-for-life">Potential for life</a>
+				<a href="#size-and-distance">Size and distance</a>
+				<a href="#orbit-and-rotation">Orbit and rotation</a>
+				<a href="#moons">Moons</a>
+				<a href="#rings">Rings</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+			</aside>
+			<div id="textHolder">
+	<p>Earth is only the fifth largest planet in the solar system, it is the only planet in our solar system with liquid water on the surface. Just slightly larger than nearby Venus, Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and metal.</p>
+	<p>Earth is the only planet in the solar system whose English name does not come from Greek or Roman mythology. The name was taken from Old English and Germanic. It simply means "the ground." There are, of course, many names for our planet in the thousands of languages spoken by the people of the third planet from the Sun.</p>
+	<h2 id="namesake">Namesake</h2>
+  <p>The name Earth is about 1,000 years old. All of the planets except Earth were named
+    after Greek and Roman gods and goddesses. The name Earth is a Germanic word, which
+    simply means "the ground."</p>
+ 
+  <h2 id="potential-for-life">Potential for life</h2>
+  <p>Earth has a very hospitable temperature and mix of chemicals that have made life
+    abundant here. Most notably, Earth is unique in that most of our planet is covered in
+    liquid water, since the temperature allows liquid water to exist for extended periods
+    of time. Earth's vast oceans provided a convenient place for life to begin about
+    3.8 billion years ago.</p>
+  <p>Some of the features of our planet that make it great for sustaining life are
+    changing due to the ongoing effects of climate change.</p>
+ 
+  <h2 id="size-and-distance">Size and distance</h2>
+  <p>With an equatorial diameter of 7,926 miles (12,756 kilometers), Earth is the biggest
+    of the terrestrial planets and the fifth largest planet in our solar system.</p>
+  <p>From an average distance of 93 million miles (150 million kilometers), Earth is
+    exactly one astronomical unit away from the Sun, because one astronomical unit is
+    defined as the distance from the Sun to Earth. This unit provides an easy way to
+    quickly compare planets' distances from the Sun.</p>
+  <p>It takes about eight minutes for light from the Sun to reach our planet.</p>
+ 
+  <h2 id="orbit-and-rotation">Orbit and rotation</h2>
+  <p>As Earth orbits the Sun, it completes one rotation every 23.9 hours. It takes
+    365.25 days to complete one trip around the Sun. That extra quarter of a day presents
+    a challenge to our calendar system, which counts one year as 365 days. To keep our
+    yearly calendars consistent with our orbit around the Sun, every four years we add one
+    day. That day is called a leap day, and the year it is added to is called a leap
+    year.</p>
+  <p>Earth's axis of rotation is tilted 23.4 degrees with respect to the plane of its
+    orbit around the Sun. This tilt causes our yearly cycle of seasons. During part of the
+    year, the northern hemisphere is tilted toward the Sun and the southern hemisphere is
+    tilted away. With the Sun higher in the sky, solar heating is greater in the north,
+    producing summer there. Less direct solar heating produces winter in the south. Six
+    months later the situation is reversed. When spring and fall begin, both hemispheres
+    receive roughly equal amounts of heat from the Sun.</p>
+ 
+  <h2 id="moons">Moons</h2>
+  <p>Earth is the only planet in our solar system with exactly one moon. Our Moon is the
+    brightest and most familiar object in the night sky. In many ways, the Moon is
+    responsible for making Earth such a great home. It stabilizes our planet's wobble,
+    which has made the climate less variable over thousands of years.</p>
+  <p>Earth sometimes temporarily hosts orbiting asteroids or large rocks. They are
+    typically trapped by Earth's gravity for a few months or years before returning to an
+    orbit around the Sun. Some asteroids will be in a long dance with Earth as both orbit
+    the Sun.</p>
+  <p>Some moons are bits of rock that were captured by a planet's gravity, but our Moon is
+    likely the result of a collision billions of years ago. When Earth was a young planet,
+    a large chunk of rock smashed into it, displacing a portion of Earth's interior. The
+    resulting chunks clumped together and formed our Moon. With a radius of 1,080 miles
+    (1,738 kilometers), the Moon is the fifth largest moon in our solar system, after
+    Ganymede, Titan, Callisto, and Io.</p>
+  <p>The Moon is an average of 238,855 miles (384,400 kilometers) away from Earth. That
+    means 30 Earth-sized planets could fit in between Earth and its Moon.</p>
+ 
+  <h2 id="rings">Rings</h2>
+  <p>Earth has no rings.</p>
+ 
+  <h2 id="formation">Formation</h2>
+  <p>When the solar system settled into its current layout about 4.5 billion years ago,
+    Earth formed as gravity pulled swirling gas and dust in to become the third planet
+    from the Sun. Like its fellow terrestrial planets, Earth has a central core, a rocky
+    mantle, and a solid crust.</p>
+ 
+  <h2 id="structure">Structure</h2>
+  <p>Earth is composed of four main layers, starting with an inner core at the planet's
+    center, enveloped by the outer core, mantle, and crust.</p>
+  <p>The inner core is a solid sphere made of iron and nickel metals, about 759 miles
+    (1,221 kilometers) in radius. There the temperature is as high as
+    9,800 degrees Fahrenheit (5,400 degrees Celsius). Surrounding the inner core is the
+    outer core, a layer about 1,400 miles (2,300 kilometers) thick, made of iron and
+    nickel fluids.</p>
+  <p>In between the outer core and crust is the mantle, the thickest layer. This hot,
+    viscous mixture of molten rock is about 1,800 miles (2,900 kilometers) thick and has
+    the consistency of caramel. The outermost layer, Earth's crust, goes about 19 miles
+    (30 kilometers) deep on average on land. At the bottom of the ocean the crust is
+    thinner, extending about 3 miles (5 kilometers) from the seafloor to the top of the
+    mantle.</p>
+ 
+  <h2 id="surface">Surface</h2>
+  <p>Like Mars and Venus, Earth has volcanoes, mountains, and valleys. Earth's
+    lithosphere, which includes the crust — both continental and oceanic — and the upper
+    mantle, is divided into huge plates that are constantly moving. The North American
+    plate, for example, moves west over the Pacific Ocean basin roughly at a rate equal to
+    the growth of our fingernails. Earthquakes result when plates grind past one another,
+    ride up over one another, collide to make mountains, or split and separate.</p>
+  <p>Earth's global ocean, which covers about 71 percent of the planet's surface, has an
+    average depth of about 2.3 miles (3.6 kilometers) and contains 97 percent of Earth's
+    water. Almost all of Earth's volcanoes are hidden under these oceans. Hawaii's Mauna
+    Kea volcano is taller from base to summit than Mount Everest, but most of it is
+    underwater. Earth's longest mountain range is also underwater, at the bottom of the
+    Arctic and Atlantic oceans. It is four times longer than the Andes, Rockies, and
+    Himalayas combined.</p>
+ 
+  <h2 id="atmosphere">Atmosphere</h2>
+  <p>Near the surface, Earth has an atmosphere that consists of 78 percent nitrogen,
+    21 percent oxygen, and 1 percent other gases such as argon, carbon dioxide, and neon.
+    The atmosphere affects Earth's long-term climate and short-term local weather, and
+    shields us from much of the harmful radiation coming from the Sun. It also protects us
+    from meteoroids, most of which burn up in the atmosphere — seen as meteors in the
+    night sky — before they can strike the surface as meteorites.</p>
+ 
+  <h2 id="magnetosphere">Magnetosphere</h2>
+  <p>Our planet's rapid rotation and molten nickel-iron core give rise to a magnetic
+    field, which the solar wind distorts into a teardrop shape in space. The solar wind is
+    a stream of charged particles continuously ejected from the Sun. When charged
+    particles from the solar wind become trapped in Earth's magnetic field, they collide
+    with air molecules above our planet's magnetic poles. These air molecules then begin to
+    glow and cause aurorae, the northern and southern lights.</p>
+  <p>The magnetic field is what causes compass needles to point to the North Pole
+    regardless of which way you turn. But the magnetic polarity of Earth can change,
+    flipping the direction of the magnetic field. The geologic record tells scientists that
+    a magnetic reversal takes place about every 300,000 years on average, but the timing is
+    very irregular. As far as we know, such a reversal does not cause any harm to life on
+    Earth, and one is very unlikely to happen for at least another thousand years. But when
+    it does happen, compass needles are likely to point in many different directions for a
+    few centuries while the switch is being made. After the switch is complete, they will
+    all point south instead of north.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>

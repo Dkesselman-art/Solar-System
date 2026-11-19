@@ -1,0 +1,596 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ganymede</title>
+	<link href="CSS/Single Image Animations.css" rel="stylesheet" type="text/css">
+	<link href="CSS/All Background Color & Image.css" rel="stylesheet" type="text/css">
+	<link href="CSS/Typography.css" rel="stylesheet" type="text/css">
+	<script src="JS/Hamburger Menu.js"></script>
+	<link href="CSS/Keyboard Navigation.css" rel="stylesheet" type="text/css">
+	<script src="JS/Keyboard Navigation.js" defer></script>
+	<style>
+			body{
+			margin: 0px 0px 0px 0px;
+		}
+		/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			position: relative;
+			min-height: 80px; /* keeps the bar visible without the title link */
+		}
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
+		/* Style navigation menu links */
+		.topnav a {
+			color: lightblue;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			border-radius: 15px;
+			border: 2px solid lightblue;
+			background: grey;
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		/* Add a white background color on mouse-over */
+		.topnav a:hover {
+			border-radius: 15px;
+			background-color: lightblue;
+			color: grey;
+			border: 2px solid grey;
+		}
+		header{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 60px;
+			line-height: 1.8;
+			color: lightblue;
+			margin-top: 20px;
+			position: relative;
+		}
+		/* Small screens: Turn Off Navigation Menu Bar when shrinking the Website */
+		@media screen and (max-width: 900px){
+			.logOff{
+				position: static;
+				transform: none;
+				display: block;
+				width: fit-content;
+				margin: 10px auto 0;
+			}
+		}
+		nav{
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 10px 20px 30px;
+			box-sizing: border-box;
+		}
+			/* Small screens: Remove Drop-Down Menu */
+			@media screen and (max-width: 1200px){
+			.dropdown, 
+			.btnholder:hover .dropdown {
+			display: none !important;
+			}
+		}
+		.navButton{
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			color: lightblue;
+			background-color: grey;
+			border: 2px solid lightblue;
+			border-radius: 20px;
+			padding: 12px 34px;
+			margin: 0;
+			text-decoration: none;
+		}
+		.navButton:hover,
+		.navButton:focus{
+			background-color: lightblue;
+			color: grey;
+			text-decoration: none;
+			border: 2px solid grey;
+		}
+		.btnholder {
+			position: relative;
+			display: inline-block;
+		}
+		.btnholder a {
+			text-decoration: ;
+		}
+		.btnholder:hover {
+			color: lightblue;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 100%;
+			padding-top: 7px;
+			z-index: 10;
+		}
+		.links {
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			background-color: grey;
+			border: 2px solid lightblue;
+			border-radius: 20px;
+			padding: 12px 12px;
+			margin: 0;
+			text-decoration: none;
+			text-align: center;
+		}
+		.links:hover {
+			text-align: center;
+			background-color: lightblue;
+			color: grey;
+			text-decoration: none;
+			border: 2px solid grey;
+		}
+		.links a {
+			text-decoration: none;
+			color: inherit; 
+		}
+		.links a:hover {
+			color: grey;
+		}
+		.btnholder:hover .dropdown {
+			display: block;
+			color: lightblue;
+		}
+		.picture{
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+			max-width: 100%;
+			height: auto;  
+		}
+		#pictureHolder{
+			width: auto;
+			margin: 0 auto;
+			margin-top: 40px;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		main{
+			width: auto;
+			height: auto;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: grey;
+			font-size: 25px;
+			text-align: center;
+		}
+		h2{
+			color: lightblue;
+		}
+		#textHolder{
+			width: 80%;
+			margin: 0 auto;
+			height: auto;
+			margin-top: 90px;
+			text-align: left;
+		}
+		footer{
+			width:auto;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			color: lightblue;
+			font-size: 20px;
+		}
+		/* Thin rounded border: Header & Navigation share one frame, Text Holder gets its own */
+		header, nav{
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+			box-sizing: border-box;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+		}
+		header{
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+		}
+		nav{
+			border-top: none;
+			border-radius: 0 0 20px 20px;
+		}
+		#textHolder{
+			box-sizing: border-box;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+	</style>
+	<!-- Footer Links -->
+	<style>
+		/* Footer border box */
+		footer{
+			margin: 0 20px 20px;
+			padding: 30px 40px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+		}
+		.siteLinks{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+		}
+		.siteLinks div{
+			min-width: 180px;
+		}
+		.siteLinks h2{
+			margin: 0 0 18px;
+			font-size: 22px;
+		}
+		.siteLinks a{
+			display: block;
+			color: grey;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 12px;
+		}
+		.siteLinks a:hover{
+			text-decoration: underline;
+		}
+		.footerBottom{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 1180px;
+			margin: 30px auto 0;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.18);
+			font-size: 16px;
+		}
+	</style>
+	<!-- On This Page sidebar -->
+	<style>
+		html{
+			scroll-behavior: smooth;
+		}
+		.pageLayout{
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			width: 90%;
+			margin: 90px auto 0;
+		}
+		.pageLayout #textHolder{
+			flex: 1;
+			width: auto;
+			margin: 0;
+		}
+		#textHolder, #textHolder h2{
+			scroll-margin-top: 20px;
+		}
+		.onThisPage{
+			position: sticky;
+			top: 20px;
+			width: 240px;
+			flex-shrink: 0;
+			box-sizing: border-box;
+			padding: 20px;
+			border: 5px solid rgba(255, 255, 255, 0.18);
+			border-radius: 20px;
+			text-align: left;
+		}
+		.tocTitle{
+			margin: 0 0 12px;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: lightblue;
+		}
+		.onThisPage a{
+			display: block;
+			padding: 8px 12px;
+			border-radius: 10px;
+			color: inherit;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		.onThisPage a:hover,
+		.onThisPage a:focus{
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+		/* Small screens: put the sidebar above the text */
+		@media screen and (max-width: 900px){
+			.pageLayout{
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.onThisPage{
+				position: static;
+				width: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="index.html">Home</a>
+			<a href="Form Validation.html">Log Off</a>
+			<a href="Questions (FAQ).html">FAQ</a>
+			<a href="Our Star The Sun.html">Sun</a>
+			<a href="The 8 Planets.html">Planets</a>
+			<a href="Mercury.html">Mercury</a>
+			<a href="Venus.html">Venus</a>
+			<a href="Earth.html">Earth</a>
+			<a href="Mars.html">Mars</a>
+			<a href="Jupiter.html">Jupiter</a>
+			<a href="Saturn.html">Saturn</a>
+			<a href="Uranus.html">Uranus</a>
+			<a href="Neptune.html">Neptune</a>
+			<a href="The 5 Dwarf Planets.html">Dwarf Planets</a>
+			<a href="Ceres.html">Ceres</a>
+			<a href="Pluto.html">Pluto</a>
+			<a href="Haumea.html">Haumea</a>
+			<a href="Makemake.html">Makemake</a>
+			<a href="Eris.html">Eris</a>
+			<a href="Major Moons.html">Moons</a>
+			<a href="Moon.html">Moon</a>
+			<a href="Phobos.html">Phobos</a>
+			<a href="Deimos.html">Deimos</a>
+			<a href="Io.html">Io</a>
+			<a href="Europa.html">Europa</a>
+			<a href="Ganymede.html">Ganymede</a>
+			<a href="Callisto.html">Callisto</a>
+			<a href="Titan.html">Titan</a>
+			<a href="Titania.html">Titania</a>
+			<a href="Triton.html">Triton</a>
+			<a href="Charon.html">Charon</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	</div>
+	<header>Ganymede Facts</header>
+			<nav>
+		<!--Home-->
+		<a class="navButton" href="index.html">Home</a>
+		<!-- Stars -->
+			<a class="navButton" href="Our Star The Sun.html">Our Star: The Sun</a>
+			<!-- Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 8 Planets.html">The 8 Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Mercury.html">Mercury</a></div>
+					<div class="links"><a href="Venus.html">Venus</a></div>
+					<div class="links"><a href="Earth.html">Earth</a></div>
+					<div class="links"><a href="Mars.html">Mars</a></div>
+					<div class="links"><a href="Jupiter.html">Jupiter</a></div>
+					<div class="links"><a href="Saturn.html">Saturn</a></div>
+					<div class="links"><a href="Uranus.html">Uranus</a></div>
+					<div class="links"><a href="Neptune.html">Neptune</a></div>
+				</div>
+			</div>
+
+			<!-- Dwarf Planets -->
+			<div class="btnholder">
+				<a class="navButton" href="The 5 Dwarf Planets.html">The 5 Dwarf Planets &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Ceres.html">Ceres</a></div>
+					<div class="links"><a href="Pluto.html">Pluto</a></div>
+					<div class="links"><a href="Haumea.html">Haumea</a></div>
+					<div class="links"><a href="Makemake.html">Makemake</a></div>
+					<div class="links"><a href="Eris.html">Eris</a></div>
+				</div>
+			</div>
+				<!-- Moons -->
+			<div class="btnholder">
+				<a class="navButton" href="Major Moons.html">Major Moons &#9662;</a>
+				<div class="dropdown">
+					<div class="links"><a href="Moon.html">Moon</a></div>
+					<div class="links"><a href="Phobos.html">Phobos</a></div>
+					<div class="links"><a href="Deimos.html">Deimos</a></div>
+					<div class="links"><a href="Io.html">Io</a></div>
+					<div class="links"><a href="Europa.html">Europa</a></div>
+					<div class="links"><a href="Ganymede.html">Ganymede</a></div>
+					<div class="links"><a href="Callisto.html">Callisto</a></div>
+					<div class="links"><a href="Titan.html">Titan</a></div>
+					<div class="links"><a href="Titania.html">Titania</a></div>
+					<div class="links"><a href="Triton.html">Triton</a></div>
+					<div class="links"><a href="Charon.html">Charon</a></div>
+				</div>
+			</div>
+		</nav>
+  		<main>
+	  		<div id="pictureHolder"><img class="picture" src="Images/ganymede.gif" width="173px" height="173px" alt="Ganymede"/></div>
+	  		<div class="pageLayout">
+			<aside class="onThisPage">
+				<p class="tocTitle">On this page</p>
+				<a href="#textHolder">Introduction</a>
+				<a href="#discovery-and-name">Discovery and Name</a>
+				<a href="#potential-for-life">Potential for Life</a>
+				<a href="#size-and-distance">Size and Distance</a>
+				<a href="#orbit-and-rotation">Orbit and Rotation</a>
+				<a href="#moons">Moons</a>
+				<a href="#rings">Rings</a>
+				<a href="#formation">Formation</a>
+				<a href="#structure">Structure</a>
+				<a href="#surface">Surface</a>
+				<a href="#atmosphere">Atmosphere</a>
+				<a href="#magnetosphere">Magnetosphere</a>
+				<a href="#pop-culture">Pop Culture</a>
+			</aside>
+			<div id="textHolder">
+<p>Jupiter's moon Ganymede is the largest moon in our solar system, bigger than the planet Mercury and dwarf planet Pluto.</p>
+
+<p>NASA's Hubble Space Telescope has found the best evidence yet for an underground saltwater ocean on Ganymede. The ocean is thought to have more water than all the water on Earth's surface. Ganymede's ocean is estimated to be 60 miles (100 kilometers) thick – 10 times deeper than Earth's ocean – and is thought to be buried under a 95-mile- (150-kilometer-) thick crust of mostly ice. Identifying liquid water is crucial in the search for habitable worlds beyond Earth, and in the search for life as we know it.</p>
+
+<p>Ganymede is the only moon known to have its own magnetic field – a discovery made by NASA's Galileo spacecraft in 1996. The magnetic field causes auroras, which are ribbons of glowing, hot, electrified gas, in regions circling the north and south poles of the moon. Because Ganymede is close to Jupiter, its magnetic field is embedded in, or lies within, Jupiter's magnetic field.</p>
+
+<p>When Jupiter's magnetic field changes, the auroras on Ganymede also change, "rocking" back and forth. It was by watching the rocking motion of the two auroras, that a team of scientists led by Joachim Saur of the University of Cologne in Germany came up with the idea of using the Hubble space telescope to learn more about the inside of the moon.</p>
+
+<p>NASA's Juno mission has observed mineral salts and organic compounds on the surface of Ganymede. Data for this discovery was collected by the Jovian InfraRed Auroral Mapper (JIRAM) spectrometer aboard the spacecraft during a close flyby of the icy moon on June 7, 2021. The findings, which could help scientists better understand the origin of Ganymede and the composition of its deep ocean, were published on Oct. 30, 2023, in the journal Nature Astronomy.</p>
+
+<h2 id="discovery-and-name">Discovery and Name</h2>
+<p>Ganymede was discovered by Italian astronomer Galileo Galilei on Jan. 7, 1610. The discovery, along with his discovery of three other large moons around Jupiter, was the first time a moon was discovered orbiting a planet other than Earth. The discovery eventually led to the understanding that planets in our solar system orbit the Sun, instead of our solar system revolving around Earth.</p>
+
+<p>In mythology, Ganymede ("GAN uh meed") was a beautiful young boy who was carried to Olympus by Zeus (the Greek equivalent of the Roman god Jupiter) disguised as an eagle. Ganymede became the cupbearer of the Olympian gods.</p>
+
+<h2 id="potential-for-life">Potential for Life</h2>
+<p>A computer model of Ganymede's interior created in 2014 supported the idea that the development of primitive life might be possible there. The model indicated the icy moon's rocky sea bottom might be in contact with salt water. Scientists think water and rock interacting are key for the development of life.</p>
+
+<h2 id="size-and-distance">Size and Distance</h2>
+<p>Ganymede's diameter is about 3, 270 miles (5,260 kilometers). It is the largest moon in our solar system. It's bigger than Mercury and Pluto. Ganymede is about 665,000 miles (1.07 million kilometers) from Jupiter, which orbits about 484 million miles (778 million kilometers) from the Sun. Jupiter is about five times farther from the Sun than Earth. From this distance, it takes sunlight 43 minutes to travel from the Sun to Jupiter and its moons.</p>
+
+<h2 id="orbit-and-rotation">Orbit and Rotation</h2>
+<p>Ganymede orbits Jupiter at a distance of 665,000 miles (1,070,000 kilometers), making it third in distance from Jupiter among the Galilean satellites:</p>
+
+<p>Io is the most volcanically active world in the solar system, with hundreds of volcanoes, some erupting lava fountains dozens of miles (or kilometers) high.</p>
+
+<p>Europa is thought to have an iron core, a rocky mantle and an ocean of salty water that may be one of the best places to look for life beyond Earth in our solar system.</p>
+
+<p>Ganymede is the largest moon in our solar system and the only moon with its own magnetic field.</p>
+
+<p>Callisto is the most heavily cratered object in our solar system.</p>
+
+<p>Ganymede completes an orbit around Jupiter about every seven Earth days (7.155). Ganymede orbits the Sun along with Jupiter and its other satellites every 12 Earth years.</p>
+
+<p>Ganymede, Io, and Europa are in what is called a resonance – every time Ganymede orbits Jupiter once, Europa orbits twice, and Io orbits four times. This pattern in their orbits is called orbital resonance. (Jupiter's other large moon – Callisto – is not part of the orbital resonance, seemingly because it was too far away from Jupiter early in the moons' history for its orbit to be pulled inward toward Jupiter.) Over time, the orbits of most large satellites or planets tend to become circular, but that isn't the case for these three. Their resonance forces their orbits to become slightly elliptical, or eccentric. The satellites line up with one another at the same points in their orbits over and over, giving each other a small gravitational tug that keeps their orbits from becoming circular.</p>
+
+<p>Ganymede is tidally locked, meaning that like Earth's Moon, the same side of Ganymede always faces Jupiter. The other three Galilean moons are also tidally locked.</p>
+
+<h2 id="moons">Moons</h2>
+<p>Ganymede does not have moons.</p>
+
+<h2 id="rings">Rings</h2>
+<p>Ganymede does not have rings.</p>
+
+<h2 id="formation">Formation</h2>
+<p>Ganymede and Jupiter's other large moons (Io, Europa, and Callisto) likely formed from leftover material after Jupiter condensed out of the initial cloud of gas and dust surrounding the Sun, early in the history of our solar system. Ganymede is likely about the same age as the rest of the solar system – about 4.5 billion years old.</p>
+
+<p>NASA's Juno spacecraft is currently orbiting Jupiter with the main goal of learning more about the origin and evolution of Jupiter and its satellites. Scientists think that understanding Jupiter will provide critical knowledge about our solar system, and the planetary systems being discovered around other stars.</p>
+
+<h2 id="structure">Structure</h2>
+<p>Ganymede has three main layers: A metallic iron core at its center, a spherical shell of rock (mantle) surrounding the core, and a spherical shell of mostly ice surrounding the rock shell. The surface is the very top of the ice shell. Scientists have discovered irregular lumps beneath Ganymede's icy surface. These irregular masses may be rock formations, supported by Ganymede's icy shell for billions of years.</p>
+
+<p>Computer models show Ganymede might have ice and oceans stacked up in several layers like a club sandwich. Scientists first suspected Ganymede had an underground ocean in the 1970s. The Galileo spacecraft discovered Ganymede's magnetic field in 1996, providing evidence to support the theory.</p>
+
+<p>NASA's Hubble Space Telescope has found more evidence for an underground saltwater ocean, and evidence of a thin oxygen atmosphere on Ganymede.</p>
+
+<h2 id="surface">Surface</h2>
+<p>Ganymede has two distinct types of terrain: large, bright regions of ridges, and grooves that slice across older, darker terrains. This suggests to scientists that Ganymede's crust has been under tension from global tectonic processes. NASA's Juno spacecraft took images of Ganymede's surface during flybys in June 2021.</p>
+
+<p>The images of Ganymede show its surface is a mix of two types of terrain. Forty percent of the surface is covered by highly cratered dark regions, and the remaining sixty percent is covered by a light grooved terrain, which forms intricate patterns across the moon. Some of the groove ridges are as high as 2,000 feet (700 meters), and the grooves run for thousands of miles across Ganymede's surface. The large craters on Ganymede are mostly flat, probably due to settling in the soft icy surface. Both bright and dark rays of ejecta can be seen around Ganymede's craters.</p>
+
+<p>In 2004, scientists discovered irregular lumps beneath the icy surface of Ganymede. The irregular masses may be rock formations, supported by Ganymede's icy shell for billions of years. This tells scientists that the ice is probably strong enough, at least near the surface, to support such rock masses from sinking to the bottom of the ice. However, this anomaly could also be caused by piles of rock at the bottom of the ice.</p>
+
+<h2 id="atmosphere">Atmosphere</h2>
+<p>Astronomers using the Hubble Space Telescope have found evidence of a thin oxygen atmosphere on Ganymede. The researchers think the oxygen is coming from Ganymede's icy surface. Ganymede is much colder than Earth, with daytime surface temperatures ranging from -297 to -171 degrees Fahrenheit (90 to 160 Kelvin). Jupiter and its moons receive less than 1/30th the amount of sunlight that the Earth does, and Ganymede doesn't have a dense atmosphere to trap heat.</p>
+
+<h2 id="magnetosphere">Magnetosphere</h2>
+<p>The Galileo spacecraft, the first to orbit Jupiter, made the major discovery that Ganymede has its own magnetosphere – a region of charged particles that surrounds many planets but had never before been found around a moon. Galileo even captured sounds of whistling and static caused by Ganymede's magnetosphere.</p>
+
+<h2 id="pop-culture">Pop Culture</h2>
+<p>Ganymede played a big role in the TV series, "The Expanse." Ganymede also was featured in several other TV shows including:</p>
+
+<p>The anime TV series "Cowboy Bebop"</p>
+
+<p>The Canadian show "Starhunter"</p>
+
+<p>The British series "Red Dwarf"</p>
+
+<p>Ganymede is a favorite setting in science fiction books. Legendary British writer Arthur C. Clarke was inspired by images from Voyager 2 showing grooved ridges cutting across parts of Ganymede when he created Ganymede City for his novel "3001: The Final Odyssey." Clarke references Voyager in his sources and writes about his anticipation for more images from the Galileo spacecraft which started exploring Ganymede on June 27, 1996, just days before the book was published.</p>
+
+<p>In 1950, American writer Robert A. Heinlein wrote "Farmer in the Sky" about a teenage boy who followed his father to Ganymede to set up a farm.</p>
+
+<p>Ganymede also played a role in:</p>
+
+<p>"Cold As Ice" (Series) by Charles Sheffield</p>
+
+<p>"The Ice Orphan of Ganymede" by Leonardo Ramirez</p>
+
+<p>"The Runaway Robot" by Lester Del Rey</p>
+
+<p>"The Moons of Jupiter" by Alice Munro</p>
+
+<p>"The Gentle Giants of Ganymede" by James P. Hogan</p>
+
+<p>Ganymede may not be burning up the music charts, but it does have a following in the music world. An American electropop duo named their band Ganymede, and released a song called "Operation Ganymede" in 2008. The indie-pop group Brazzaville named an album and its title track "The Oceans of Ganymede" after hearing news that Ganymede may have a saltwater ocean.</p>
+	</div>
+		</div>
+	</main>
+	<footer>
+		<div class="siteLinks">
+			<div>
+				<h2>Explore</h2>
+				<a href="index.html">Home</a>
+				<a href="Our Star The Sun.html">Our Star: The Sun</a>
+				<a href="Questions (FAQ).html">Questions (FAQ)</a>
+			</div>
+			<div>
+				<h2>The 8 Planets</h2>
+				<a href="Mercury.html">Mercury</a>
+				<a href="Venus.html">Venus</a>
+				<a href="Earth.html">Earth</a>
+				<a href="Mars.html">Mars</a>
+				<a href="Jupiter.html">Jupiter</a>
+				<a href="Saturn.html">Saturn</a>
+				<a href="Uranus.html">Uranus</a>
+				<a href="Neptune.html">Neptune</a>
+			</div>
+			<div>
+				<h2>The 5 Dwarf Planets</h2>
+				<a href="Ceres.html">Ceres</a>
+				<a href="Pluto.html">Pluto</a>
+				<a href="Haumea.html">Haumea</a>
+				<a href="Makemake.html">Makemake</a>
+				<a href="Eris.html">Eris</a>
+			</div>
+			<div>
+				<h2>Major Moons</h2>
+				<a href="Moon.html">Moon</a>
+				<a href="Phobos.html">Phobos</a>
+				<a href="Deimos.html">Deimos</a>
+				<a href="Io.html">Io</a>
+				<a href="Europa.html">Europa</a>
+				<a href="Ganymede.html">Ganymede</a>
+				<a href="Callisto.html">Callisto</a>
+				<a href="Titan.html">Titan</a>
+				<a href="Titania.html">Titania</a>
+				<a href="Triton.html">Triton</a>
+				<a href="Charon.html">Charon</a>
+			</div>
+			<div>
+				<h2>Account</h2>
+				<a href="Form Validation.html">Log Off</a>
+			</div>
+		</div>
+		<div class="footerBottom">
+			<span>&copy; David Kesselman, 2026</span>
+			<span>Facts adapted from NASA Science.</span>
+		</div>
+	</footer>
+</body>
+</html>
